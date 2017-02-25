@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ESCoverFlowLayout'
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Custom Coverflow Collection View Layout"
 
 # This description is used to generate tags and improve search results.
