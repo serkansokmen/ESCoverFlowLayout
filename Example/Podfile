@@ -1,0 +1,6 @@
+use_frameworks!
+target 'ESCoverFlowLayout_Tests' do
+  pod 'ESCoverFlowLayout', :path => '../'
+  
+  
+end
