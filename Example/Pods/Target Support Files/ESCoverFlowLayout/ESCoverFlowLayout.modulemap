@@ -1,0 +1,6 @@
+framework module ESCoverFlowLayout {
+  umbrella header "ESCoverFlowLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "ESCoverFlowLayout",
+  "version": "0.1.0",
+  "summary": "A short description of ESCoverFlowLayout.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/serkansokmen/ESCoverFlowLayout",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "serkansokmen": "e.serkan.sokmen@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/serkansokmen/ESCoverFlowLayout.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "ESCoverFlowLayout/Classes/**/*"
+}

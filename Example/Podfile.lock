@@ -1,0 +1,16 @@
+PODS:
+  - ESCoverFlowLayout (0.1.0)
+
+DEPENDENCIES:
+  - ESCoverFlowLayout (from `../`)
+
+EXTERNAL SOURCES:
+  ESCoverFlowLayout:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ESCoverFlowLayout: a6908be5f82f8051d40c1358af0a22fe995d4c4c
+
+PODFILE CHECKSUM: 2fbd5caf91d544dd8335dbf57657ae071f34e1ba
+
+COCOAPODS: 1.2.0
