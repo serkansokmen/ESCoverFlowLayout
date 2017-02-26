@@ -8,7 +8,7 @@
 import UIKit
 
 
-public class ESCoverFlowLayout: UICollectionViewFlowLayout {
+open class ESCoverFlowLayout: UICollectionViewFlowLayout {
     
     public var maxCoverDegree: CGFloat!
     public var coverDensity: CGFloat!
@@ -29,14 +29,14 @@ public class ESCoverFlowLayout: UICollectionViewFlowLayout {
         self.commonInit()
     }
     
-    func commonInit() {
+    private func commonInit() {
         self.maxCoverDegree = 22.5
         self.coverDensity = 0.125 // 1/8
         self.minCoverOpacity = 0.4
         self.minCoverScale = 1.0
     }
     
-    override public func prepare() {
+    override open func prepare() {
         super.prepare()
         
         assert(self.collectionView?.numberOfSections == 1, "Multiple sections are not supported")
@@ -51,17 +51,17 @@ public class ESCoverFlowLayout: UICollectionViewFlowLayout {
         self.collectionView?.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
-    override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+    override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
     
-    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override open func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
         // return attributes from cache
         return self.indexPathsContained(inRect: rect).map { self.cache[$0.item] }
     }
     
-    override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    override open func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         
         guard let attributes = super.layoutAttributesForItem(at:indexPath) else { return nil }
         
@@ -74,7 +74,7 @@ public class ESCoverFlowLayout: UICollectionViewFlowLayout {
         return attributes
     }
     
-    override public func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    override open func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         guard let attributes = super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath) else { return nil }
         attributes.transform = attributes.transform.translatedBy(x: 0, y: self.itemSize.height)
         attributes.alpha = 0.0
@@ -82,7 +82,7 @@ public class ESCoverFlowLayout: UICollectionViewFlowLayout {
         return attributes
     }
     
-    override public var collectionViewContentSize: CGSize {
+    override open var collectionViewContentSize: CGSize {
         guard let collectionView = self.collectionView else { return .zero }
         let width = collectionView.bounds.size.width * CGFloat(collectionView.numberOfItems(inSection: 0))
         let height = collectionView.bounds.size.height
@@ -97,7 +97,7 @@ public class ESCoverFlowLayout: UICollectionViewFlowLayout {
         return self.collectionView?.bounds.size.height ?? 0.0
     }
     
-    override public func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+    override open func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         
         let defaults = super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
         guard self.isSnapEnabled else { return defaults }
