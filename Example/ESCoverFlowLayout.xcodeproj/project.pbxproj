@@ -44,9 +44,9 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6A12D260B04DE562176FCDB3 /* Pods_ESCoverFlowLayout_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ESCoverFlowLayout_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A250983C73B50E8794D839CC /* ESCoverFlowLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ESCoverFlowLayout.podspec; path = ../ESCoverFlowLayout.podspec; sourceTree = "<group>"; };
-		B81E31B5F969359B78997224 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		D3C1CBD8C75AF6B174547626 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A250983C73B50E8794D839CC /* ESCoverFlowLayout.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ESCoverFlowLayout.podspec; path = ../ESCoverFlowLayout.podspec; sourceTree = "<group>"; };
+		B81E31B5F969359B78997224 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		D3C1CBD8C75AF6B174547626 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
