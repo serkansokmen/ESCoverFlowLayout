@@ -1,5 +1,7 @@
 # ESCoverFlowLayout
 
+Ported to Swift 3 from https://github.com/solomidSF/YRCoverFlowLayout/
+
 [![CI Status](http://img.shields.io/travis/serkansokmen/ESCoverFlowLayout.svg?style=flat)](https://travis-ci.org/serkansokmen/ESCoverFlowLayout)
 [![Version](https://img.shields.io/cocoapods/v/ESCoverFlowLayout.svg?style=flat)](http://cocoapods.org/pods/ESCoverFlowLayout)
 [![License](https://img.shields.io/cocoapods/l/ESCoverFlowLayout.svg?style=flat)](http://cocoapods.org/pods/ESCoverFlowLayout)
