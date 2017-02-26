@@ -24,7 +24,7 @@ open class ESCoverFlowLayout: UICollectionViewFlowLayout {
         self.commonInit()
     }
     
-    override init() {
+    override public init() {
         super.init()
         self.commonInit()
     }
@@ -89,14 +89,6 @@ open class ESCoverFlowLayout: UICollectionViewFlowLayout {
         return CGSize(width: width, height: height)
     }
     
-    var collectionViewWidth: CGFloat {
-        return self.collectionView?.bounds.size.width ?? 0.0
-    }
-    
-    var collectionViewHeight: CGFloat {
-        return self.collectionView?.bounds.size.height ?? 0.0
-    }
-    
     override open func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         
         let defaults = super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
@@ -122,6 +114,14 @@ open class ESCoverFlowLayout: UICollectionViewFlowLayout {
 
 // MARK: - Private
 extension ESCoverFlowLayout {
+    
+    fileprivate var collectionViewWidth: CGFloat {
+        return self.collectionView?.bounds.size.width ?? 0.0
+    }
+    
+    fileprivate var collectionViewHeight: CGFloat {
+        return self.collectionView?.bounds.size.height ?? 0.0
+    }
     
     fileprivate func itemCenter(forItem item: Int) -> CGPoint {
         return CGPoint(x: CGFloat(item) * self.collectionViewWidth + self.collectionViewWidth / 2,
