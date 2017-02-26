@@ -8,18 +8,18 @@
 import UIKit
 
 
-class ESCoverFlowLayout: UICollectionViewFlowLayout {
+public class ESCoverFlowLayout: UICollectionViewFlowLayout {
     
-    var maxCoverDegree: CGFloat!
-    var coverDensity: CGFloat!
-    var minCoverOpacity: CGFloat!
-    var minCoverScale: CGFloat!
-    var isSnapToItemEnabled: Bool = true
+    public var maxCoverDegree: CGFloat!
+    public var coverDensity: CGFloat!
+    public var minCoverOpacity: CGFloat!
+    public var minCoverScale: CGFloat!
+    public var isSnapEnabled: Bool = true
     
     fileprivate let kDistanceToProjectionPlane: CGFloat = 500.0
     fileprivate var cache = [UICollectionViewLayoutAttributes]()
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.commonInit()
     }
@@ -36,7 +36,7 @@ class ESCoverFlowLayout: UICollectionViewFlowLayout {
         self.minCoverScale = 1.0
     }
     
-    override func prepare() {
+    override public func prepare() {
         super.prepare()
         
         assert(self.collectionView?.numberOfSections == 1, "Multiple sections are not supported")
@@ -51,17 +51,17 @@ class ESCoverFlowLayout: UICollectionViewFlowLayout {
         self.collectionView?.decelerationRate = UIScrollViewDecelerationRateFast
     }
     
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+    override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
         return true
     }
     
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
         // return attributes from cache
         return self.indexPathsContained(inRect: rect).map { self.cache[$0.item] }
     }
     
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    override public func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         
         guard let attributes = super.layoutAttributesForItem(at:indexPath) else { return nil }
         
@@ -74,7 +74,7 @@ class ESCoverFlowLayout: UICollectionViewFlowLayout {
         return attributes
     }
     
-    override func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
+    override public func finalLayoutAttributesForDisappearingItem(at itemIndexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         guard let attributes = super.finalLayoutAttributesForDisappearingItem(at: itemIndexPath) else { return nil }
         attributes.transform = attributes.transform.translatedBy(x: 0, y: self.itemSize.height)
         attributes.alpha = 0.0
@@ -82,7 +82,7 @@ class ESCoverFlowLayout: UICollectionViewFlowLayout {
         return attributes
     }
     
-    override var collectionViewContentSize: CGSize {
+    override public var collectionViewContentSize: CGSize {
         guard let collectionView = self.collectionView else { return .zero }
         let width = collectionView.bounds.size.width * CGFloat(collectionView.numberOfItems(inSection: 0))
         let height = collectionView.bounds.size.height
@@ -97,10 +97,10 @@ class ESCoverFlowLayout: UICollectionViewFlowLayout {
         return self.collectionView?.bounds.size.height ?? 0.0
     }
     
-    override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+    override public func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         
         let defaults = super.targetContentOffset(forProposedContentOffset: proposedContentOffset)
-        guard self.isSnapToItemEnabled else { return defaults }
+        guard self.isSnapEnabled else { return defaults }
         guard let collectionView = self.collectionView else { return defaults }
         
         // snap items to center after dragging
