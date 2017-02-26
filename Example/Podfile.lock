@@ -1,16 +1,37 @@
 PODS:
-  - ESCoverFlowLayout (0.1.0)
+  - ESCoverFlowLayout (1.0.3)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - Nimble (5.1.1)
+  - Nimble-Snapshots (4.4.0):
+    - Nimble-Snapshots/Core (= 4.4.0)
+  - Nimble-Snapshots/Core (4.4.0):
+    - FBSnapshotTestCase (~> 2.0)
+    - Nimble
+    - Quick
+  - Quick (1.0.0)
 
 DEPENDENCIES:
   - ESCoverFlowLayout (from `../`)
+  - FBSnapshotTestCase
+  - Nimble (~> 5.1.1)
+  - Nimble-Snapshots
+  - Quick (~> 1.0.0)
 
 EXTERNAL SOURCES:
   ESCoverFlowLayout:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ESCoverFlowLayout: a6908be5f82f8051d40c1358af0a22fe995d4c4c
+  ESCoverFlowLayout: 2a8e20a1c8ed6eb76669918caf2259fb330fd8ca
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  Nimble: 415e3aa3267e7bc2c96b05fa814ddea7bb686a29
+  Nimble-Snapshots: e743439f26c2fa99d8f7e0d7c01c99bcb40aa6f2
+  Quick: 8024e4a47e6cc03a9d5245ef0948264fc6d27cff
 
-PODFILE CHECKSUM: 2fbd5caf91d544dd8335dbf57657ae071f34e1ba
+PODFILE CHECKSUM: a9829cce97fc9b1ce1dee6d9745aa1facd54ef84
 
 COCOAPODS: 1.2.0

@@ -7,18 +7,12 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'ESCoverFlowLayout'
-  s.version      = "1.0.1"
+  s.name         = 'ESCoverFlowLayout'
+  s.version      = "1.0.3"
   s.summary      = "Custom Coverflow Collection View Layout"
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
   s.description      = <<-DESC
-Simple cover animation flow layout for collection view
+Simple coverflow layout for UICollectionView
                        DESC
 
   s.homepage         = 'https://github.com/serkansokmen/ESCoverFlowLayout'
@@ -31,12 +25,12 @@ Simple cover animation flow layout for collection view
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'ESCoverFlowLayout/Classes/**/*'
-
+  
   # s.resource_bundles = {
   #   'ESCoverFlowLayout' => ['ESCoverFlowLayout/Assets/*.png']
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
